@@ -1,3 +1,5 @@
+import { ADD_NEW_USER } from "../actions/types";
+
 const initialState = {
   users: [
     {
@@ -29,7 +31,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case "ADD_NEW_USER":
+    case ADD_NEW_USER:
       return {
         ...state,
         users: [...state.users, action.payload]

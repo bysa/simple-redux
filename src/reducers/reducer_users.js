@@ -1,5 +1,5 @@
-export default function() {
-  return [
+const initialState = {
+  users: [
     {
       id: 1,
       first: "Bucky",
@@ -24,5 +24,17 @@ export default function() {
       description: "Amin is a front-end developer",
       thumbnail: ""
     }
-  ];
+  ]
+};
+
+export default function(state = initialState, action) {
+  switch (action.type) {
+    case "ADD_NEW_USER":
+      return {
+        ...state,
+        users: [...state.users, action.payload]
+      };
+    default:
+      return state;
+  }
 }

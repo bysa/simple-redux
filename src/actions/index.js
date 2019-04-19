@@ -5,3 +5,11 @@ export const selectUser = user => {
     payload: user
   };
 };
+
+export const addNewUser = user => {
+  console.log("asdadadad");
+  return {
+    type: "ADD_NEW_USER",
+    payload: user
+  };
+};

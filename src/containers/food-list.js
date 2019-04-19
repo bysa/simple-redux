@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { selectUser } from "../actions/index";
+import { selectFood } from "../actions/index";
 
-export class userList extends Component {
+export class foodList extends Component {
   createListItems() {
-    return this.props.users.users.map(user => {
+    return this.props.foods.foods.map(food => {
       return (
-        <li key={user.id} onClick={() => this.props.selectUser(user)}>
-          {user.first} {user.last}
+        <li key={food.id} onClick={() => this.props.selectFood(food)}>
+          {food.name}: {food.description}
         </li>
       );
     });
@@ -21,15 +21,15 @@ export class userList extends Component {
 
 function mapStateToProps(state) {
   return {
-    users: state.users
+    foods: state.foods
   };
 }
 
 function matchDispatchToProps(dispatch) {
-  return bindActionCreators({ selectUser: selectUser }, dispatch);
+  return bindActionCreators({ selectFood: selectFood }, dispatch);
 }
 
 export default connect(
   mapStateToProps,
   matchDispatchToProps
-)(userList);
+)(foodList);

@@ -1,15 +1,15 @@
-import { ADD_NEW_USER, USER_SELECTED } from "./types";
+import { ADD_NEW_FOOD, FOOD_SELECTED } from "./types";
 
-export const selectUser = user => {
+export const selectFood = food => {
   return {
-    type: USER_SELECTED,
-    payload: user
+    type: FOOD_SELECTED,
+    payload: food
   };
 };
 
-export const addNewUser = user => {
+export const addNewFood = food => {
   return {
-    type: ADD_NEW_USER,
-    payload: user
+    type: ADD_NEW_FOOD,
+    payload: food
   };
 };
